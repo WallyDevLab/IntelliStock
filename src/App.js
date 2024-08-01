@@ -6,7 +6,21 @@ import Dashboard from './components/Dashboard';
 
 function App() {
   const [file, setFile] = useState([]);
-  
+  // Map headers to desired headers
+  const headerMapping = {
+    'sales_date': 'sales_date',
+    'volume': 'volume',
+    'rel_promo_price': 'rel_promo_price',
+    'is_promo': 'is_promo',
+    'is_single_price_promo': 'is_single_price_promo',
+    'is_multibuy_promo': 'is_multibuy_promo',
+    'rsp': 'rsp',
+    'planned_promo_vol': 'planned_promo_vol',
+    'product_code': 'product_code',
+    'sale_date': 'sale_date',
+  };
+//uncomment once csv created
+
   const papaparseOptions = {
     header: true,
     dynamicTyping: true,
