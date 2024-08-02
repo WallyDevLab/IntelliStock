@@ -9,7 +9,7 @@ const PriceRecommendation = ({ data }) => (
       <YAxis dataKey="sales" />
       <Tooltip />
       <Legend />
-      <Bar dataKey="sales" fill="#82ca9d" />
+      <Bar dataKey="sales" fill="#000080" />
     </BarChart>
   </ResponsiveContainer>
 );
