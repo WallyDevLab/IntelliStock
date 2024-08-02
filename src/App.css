@@ -1,23 +1,34 @@
+/* Global styles for the App component */
+
 .App {
+  /* Center all text horizontally */
   text-align: center;
 }
 
 .App-logo {
+  /* Set the height of the logo to 40 viewport minimum units */
   height: 40vmin;
+  /* Disable pointer events on the logo */
   pointer-events: none;
 }
 
 .App-header {
+  /* Set the background color of the header to a dark gray */
   background-color: #282c34;
+  /* Set the minimum height of the header to 5 viewport height units */
   min-height: 5vh;
+  /* Use flexbox to center the header content vertically and horizontally */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* Set the font size to a calculated value based on the viewport size */
   font-size: calc(10px + 2vmin);
+  /* Set the text color to white */
   color: white;
 }
 
 .App-link {
+  /* Set the color of links to a bright blue */
   color: #61dafb;
 }

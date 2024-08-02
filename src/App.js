@@ -1,3 +1,6 @@
+/**
+ * Import necessary dependencies
+ */
 import React, { useEffect, useState } from 'react';
 import CSVReader from 'react-csv-reader';
 import logo from './logo.svg';
@@ -5,49 +8,54 @@ import './App.css';
 import Dashboard from './components/Dashboard';
 import axios from 'axios';
 
+/**
+ * Define the App component
+ */
 function App() {
-  const [file, setFile] = useState([]);
-  const [recent, setRecent] = useState(1);
-  const [data, setData] = useState();
-  const [headers, setHeaders] = useState([]);
-  // Map headers to desired headers
-  // const headerMapping = {
-  //   'sales_date': 'sales_date',
-  //   'volume': 'volume',
-  //   'rel_promo_price': 'rel_promo_price',
-  //   'is_promo': 'is_promo',
-  //   'is_single_price_promo': 'is_single_price_promo',
-  //   'is_multibuy_promo': 'is_multibuy_promo',
-  //   'rsp': 'rsp',
-  //   'planned_promo_vol': 'planned_promo_vol',
-  //   'product_code': 'product_code',
-  //   'sale_date': 'sale_date',
-  // };
-//uncomment once csv created
+  /**
+   * State variables
+   */
+  const [file, setFile] = useState([]); // stores the parsed CSV data
+  const [recent, setRecent] = useState(1); // stores the recent data range value
+  const [data, setData] = useState(); // stores the original CSV data
+  const [headers, setHeaders] = useState([]); // stores the CSV headers
 
+  /**
+   * Papa Parse options
+   */
   const papaparseOptions = {
-    header: true,
-    dynamicTyping: true,
-    skipEmptyLines: true,
+    header: true, // use the first row as headers
+    dynamicTyping: true, // automatically detect data types
+    skipEmptyLines: true, // skip empty lines
     transformHeader: header => 
-      header.toLowerCase().replace(/\W/g, '_')
+      header.toLowerCase().replace(/\W/g, '_') // transform headers to lowercase and replace non-word characters with underscores
   };
 
+  /**
+   * Effect hook to handle changes to the recent data range value
+   */
   useEffect(() => {
     if (data != null) {
       handleForce(data)
-
     }
   }, [recent])
 
+  /**
+   * Function to handle parsing and capping of CSV data
+   * @param {Array} data - the original CSV data
+   */
   function handleForce(data) {
-    //cap data to read last 30
+    // cap data to read last 30
     const cappedData = data.slice(-(data.length * (recent/100)));
     const csvHeaders = cappedData.length > 0 ? Object.keys(cappedData[0]) : [];
     setHeaders(csvHeaders);
     setFile(cappedData);
   }
 
+  /**
+   * Function to send CSV data to the server
+   * @param {Array} file - the parsed CSV data
+   */
   const sendCSVtoServer = async (file) => {
     await axios.post('https://nerd-biz-bot.vercel.app/csv', {
       file

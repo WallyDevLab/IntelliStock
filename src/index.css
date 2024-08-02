@@ -1,10 +1,37 @@
+/* Global styles for the body element */
 body {
+  /* Remove default margin */
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  
+  /* Set font family to a sans-serif font stack */
+  font-family: 
+    -apple-system, /* Safari and iOS */
+    BlinkMacSystemFont, /* Chrome and Safari on macOS */
+    'Segoe UI', /* Windows */
+    'Roboto', /* Android */
+    'Oxygen', /* Linux */
+    'Ubuntu', /* Linux */
+    'Cantarell', /* Linux */
+    'Fira Sans', /* Linux */
+    'Droid Sans', /* Android */
+    'Helvetica Neue', /* macOS and iOS */
+    sans-serif; /* Fallback to a generic sans-serif font */
+  
+  /* Enable anti-aliasing for webkit browsers (e.g. Chrome, Safari) */
   -webkit-font-smoothing: antialiased;
+  
+  /* Enable anti-aliasing for Mozilla browsers (e.g. Firefox) on macOS */
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Styles for code blocks */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  /* Set font family to a monospace font stack */
+  font-family: 
+    source-code-pro, /* A popular monospace font */
+    Menlo, /* A monospace font on macOS */
+    Monaco, /* A monospace font on Windows and macOS */
+    Consolas, /* A monospace font on Windows */
+    'Courier New', /* A classic monospace font */
+    monospace; /* Fallback to a generic monospace font */
 }
