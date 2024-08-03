@@ -14,7 +14,6 @@
 - **APIs & Libraries:** Axios, Papa Parse
 
 
-
 ## Installation
 
 To set up the project locally, follow these steps:
@@ -42,6 +41,10 @@ Viewing Demand Forecast: Users can view demand forecasts based on historical dat
 Challenge 1: Handling large datasets and ensuring data accuracy. Solution: Used Papa Parse to handle CSV data and implemented error handling to manage potential issues.
 
 Challenge 2: Designing a user-friendly interface that accommodates large amounts of data. Solution: Utilized Bootstrap for responsive design and ensured smooth user experience across devices.
+
+## Demo
+
+[Live Demo Link](https://youtu.be/E2p6UJZOSPw?si=w90V6tZLkRVMLmSh)
 
 ## Team: NerdsThinkCode_
 Team Leader: Lebang Nong (lebangnong@gmail.com)
